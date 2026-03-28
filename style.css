@@ -1,0 +1,131 @@
+body {
+    margin: 12px;
+    background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/9237.png);
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.head-logo {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    margin-right: 6px;
+}
+
+.head-title {
+    font-size: 15px;
+    color: white;
+    font-weight: 100;
+    margin: 0;
+}
+
+.bar {
+    width: 97%;
+    height: 25px;
+    background-color: rgba(67, 54, 54, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 6px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.red-dot,
+.green-dot,
+.yellow-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.red-dot {
+    background-color: rgba(234, 65, 99, 0.886);
+}
+
+.yellow-dot {
+    background-color: rgba(244, 210, 85, 0.845);
+}
+
+.green-dot {
+    background-color: rgba(50, 235, 192, 0.731);
+}
+
+.codearea {
+    width: 98%;
+    height: 480px;
+    background-color: rgba(67, 54, 54, 0.064);
+    border-radius: 6px;
+    margin-top: 20px;
+    display: flex;
+}
+.entercode {
+    width: 30%;
+    height: 98%;
+    border-radius: 15px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 1px rgba(255, 255, 255, 0.45),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+}
+.entercode-name {
+    width: 94%;
+    height: 25px;
+    background-color: #202225;
+    margin-top: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+.entercode-name-logo {
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    margin-right: 6px;
+    margin-top: 6px;
+}
+.entercode-name-text {
+    font-size: 10px;
+    color: white;
+    font-weight: 100;
+    margin: 0;
+    margin-top: 6px;
+    font-family: "Stack Sans Text", sans-serif;
+    font-weight: 500;
+}
+.entercode-input {
+     width: 94%;
+    height: 87%;
+    background-color: #36393f66;
+    margin-top: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    display: block;
+    padding: 10px;
+    resize: none;
+    color: white;
+    font-family: "Google Sans Code", monospace;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
