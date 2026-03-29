@@ -333,3 +333,15 @@ body {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+.vscode-logo {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+}
+.vscode-headbar {
+    width: 80px;
+    height: 18px;
+    background-color: #262b2f;
+    border-radius: 2px;
+    border: 1px solid #2c3135;
+}
