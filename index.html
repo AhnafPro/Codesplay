@@ -2,19 +2,19 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Snipx</title>
+        <title>Codesplay</title>
         <link rel="icon" href="favicon-dark.png" type="image/png">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> 
-</head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
     <body>
         <center>
             <div class="bar">
@@ -34,9 +34,88 @@
                         <img class="entercode-name-logo" src="code-icon.png" alt="Snipx Logo">
                         <p class="entercode-name-text">Code.txt</p>
                     </div>
-                    <textarea class="entercode-input" placeholder="Enter your code here..."></textarea>
+                    <div class="filter">
+                        <div class="custom-select" id="langSelect">
+                            <div class="select-selected" id="selectDisplay">
+                                <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">
+                                <span>HTML / CSS</span>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                            <div class="select-dropdown">
+                                <div class="select-option active" data-value="htmlcss" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" data-label="HTML / CSS">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">
+                                    HTML / CSS
+                                </div>
+                                <div class="select-option" data-value="jstsx" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" data-label="JS / TSX">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">
+                                    JS / TSX
+                                </div>
+                                <div class="select-option" data-value="shell" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" data-label="Shell">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="">
+                                    Shell
+                                </div>
+                                <div class="select-option" data-value="cplussharp" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" data-label="C / C++ / C#">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="">
+                                    C / C++ / C#
+                                </div>
+                                <div class="select-option" data-value="python" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" data-label="Python">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">
+                                    Python
+                                </div>
+                                <div class="select-option" data-value="java" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" data-label="Java">
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">
+                                    Java
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-slider-wrap">
+                            <input class="font-slider" id="fontSlider" type="range" min="10" max="22" value="13">
+                            <span class="font-size-label" id="fontSizeLabel">13px</span>
+                        </div>
+                        <input class="title-input" type="text" placeholder="Title...">
+                    </div>
+                    <textarea class="entercode-input" id="codeInput" placeholder="Enter your code here..."></textarea>
+                </div>
+                <div class="outputcode">
+
                 </div>
             </div>
         </center>
+        <script>
+            const select = document.getElementById('langSelect');
+            const display = document.getElementById('selectDisplay');
+
+            select.addEventListener('click', (e) => {
+                select.classList.toggle('open');
+                e.stopPropagation();
+            });
+
+            document.querySelectorAll('.select-option').forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    document.querySelectorAll('.select-option').forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+
+                    const icon = opt.dataset.icon;
+                    const label = opt.dataset.label;
+
+                    display.innerHTML = `
+                        <img class="lang-icon" src="${icon}" alt="">
+                        <span>${label}</span>
+                        <span class="select-arrow">▼</span>
+                    `;
+                    select.classList.remove('open');
+                    e.stopPropagation();
+                });
+            });
+
+            document.addEventListener('click', () => select.classList.remove('open'));
+
+            const fontSlider = document.getElementById('fontSlider');
+            const fontSizeLabel = document.getElementById('fontSizeLabel');
+
+            fontSlider.addEventListener('input', () => {
+                fontSizeLabel.textContent = fontSlider.value + 'px';
+            });
+        </script>
     </body>
 </html>
