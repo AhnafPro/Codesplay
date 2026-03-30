@@ -8,12 +8,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     </head>
     <body>
         <center>
@@ -22,16 +20,18 @@
                 <div class="yellow-dot"></div>
                 <div class="green-dot"></div>
                 <div class="top-header">
-                    <img class="head-logo" src="favicon-dark.png" alt="Snipx Logo">
+                    <img class="head-logo" src="favicon-dark.png" alt="Codesplay Logo">
                     <p class="head-title">Codes<b style="font-weight: 600;">play</b></p>
                 </div>
             </div>
         </center>
+
         <center>
             <div class="codearea">
+
                 <div class="entercode">
                     <div class="entercode-name">
-                        <img class="entercode-name-logo" src="code-icon.png" alt="Snipx Logo">
+                        <img class="entercode-name-logo" src="code-icon.png" alt="Code Icon">
                         <p class="entercode-name-text">Code.txt</p>
                     </div>
                     <div class="filter">
@@ -43,28 +43,22 @@
                             </div>
                             <div class="select-dropdown">
                                 <div class="select-option active" data-value="htmlcss" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" data-label="HTML / CSS">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">
-                                    HTML / CSS
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML / CSS
                                 </div>
                                 <div class="select-option" data-value="jstsx" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" data-label="JS / TSX">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">
-                                    JS / TSX
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JS / TSX
                                 </div>
                                 <div class="select-option" data-value="shell" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" data-label="Shell">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="">
-                                    Shell
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="">Shell
                                 </div>
                                 <div class="select-option" data-value="cplussharp" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" data-label="C / C++ / C#">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="">
-                                    C / C++ / C#
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="">C / C++ / C#
                                 </div>
                                 <div class="select-option" data-value="python" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" data-label="Python">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">
-                                    Python
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">Python
                                 </div>
                                 <div class="select-option" data-value="java" data-icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" data-label="Java">
-                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">
-                                    Java
+                                    <img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">Java
                                 </div>
                             </div>
                         </div>
@@ -72,53 +66,53 @@
                             <input class="font-slider" id="fontSlider" type="range" min="10" max="22" value="13">
                             <span class="font-size-label" id="fontSizeLabel">13px</span>
                         </div>
-                        <input class="title-input" type="text" placeholder="Title...">
+                        <input class="title-input" id="titleInput" type="text" placeholder="Title...">
                     </div>
                     <textarea class="entercode-input" id="codeInput" placeholder="Enter your code here..."></textarea>
                 </div>
-                <div class="vscode">
+
+                <div class="vscode" id="vscodePanel">
+                   
+                    <div class="handle handle-right"  id="handleRight"></div>
+                    <div class="handle handle-bottom" id="handleBottom">
+                        <div class="handle-grip"></div>
+                    </div>
                     <div class="vscode-head">
-                        <img class="vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/500px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Logo" height="15" >
-                        <center><div class="vscode-headbar"></div></center>
+                        <img class="vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/500px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Logo">
+                        <div class="vscode-headbar">codesplay vscode snippet</div>
+                    </div>
+                    <div class="vscode-codetitlename">
+                        <div class="vscode-codetitle" id="vsCodeTitle">
+                            <img id="titleIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="10" height="10" style="vertical-align:middle;margin-right:4px;">
+                            <span id="titleText">title.html</span>
+                        </div>
+                        <button class="copy-btn" id="copyBtn" title="Copy code">
+                            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <svg id="checkIcon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ec9b0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="vscode-codebody">
+                        <div class="vscode-linenumbers" id="lineNumbers"><span>1</span></div>
+                        <div class="vscode-codeinput" id="vsCodeOutput">
+                            <pre><code id="highlighted" class="language-html"></code></pre>
+                        </div>
+                    </div>
+                    <div class="vscode-statusbar">
+                        <span class="vscode-statusbar-item">⎇ main</span>
+                        <span class="vscode-statusbar-item" id="statusLang">HTML</span>
+                        <span class="vscode-statusbar-item">UTF-8</span>
+                        <span class="vscode-statusbar-item">Ln 1, Col 1</span>
                     </div>
                 </div>
+
             </div>
         </center>
-        <script>
-            const select = document.getElementById('langSelect');
-            const display = document.getElementById('selectDisplay');
 
-            select.addEventListener('click', (e) => {
-                select.classList.toggle('open');
-                e.stopPropagation();
-            });
-
-            document.querySelectorAll('.select-option').forEach(opt => {
-                opt.addEventListener('click', (e) => {
-                    document.querySelectorAll('.select-option').forEach(o => o.classList.remove('active'));
-                    opt.classList.add('active');
-
-                    const icon = opt.dataset.icon;
-                    const label = opt.dataset.label;
-
-                    display.innerHTML = `
-                        <img class="lang-icon" src="${icon}" alt="">
-                        <span>${label}</span>
-                        <span class="select-arrow">▼</span>
-                    `;
-                    select.classList.remove('open');
-                    e.stopPropagation();
-                });
-            });
-
-            document.addEventListener('click', () => select.classList.remove('open'));
-
-            const fontSlider = document.getElementById('fontSlider');
-            const fontSizeLabel = document.getElementById('fontSizeLabel');
-
-            fontSlider.addEventListener('input', () => {
-                fontSizeLabel.textContent = fontSlider.value + 'px';
-            });
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
