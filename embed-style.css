@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+    font-family: "Google Sans Code", "Consolas", monospace;
+}
+
+.vscode {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f2428;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.vscode-head {
+    width: 100%;
+    height: 25px;
+    background-color: #1f2428;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.vscode-logo {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+.vscode-headbar {
+    width: 150px;
+    height: 10px;
+    background-color: #262b2f;
+    border-radius: 2px;
+    border: 1px solid #2c3135;
+    font-size: 8px;
+    color: #3c3d3e;
+    line-height: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vscode-codetitlename {
+    width: 100%;
+    height: 25px;
+    background-color: #222323;
+    display: flex;
+    align-items: center;
+    border-top: 1.5px solid #262728;
+    border-bottom: 1.5px solid #262728;
+    flex-shrink: 0;
+}
+
+.vscode-codetitle {
+    height: 100%;
+    min-width: 80px;
+    max-width: 40%;
+    background-color: #262728;
+    border-radius: 2px;
+    font-size: 10px;
+    color: #eaebec;
+    border-top: 2px solid #0078d4;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    white-space: nowrap;
+    font-family: "Stack Sans Text", sans-serif;
+}
+
+.vscode-codetitle img {
+    margin-right: 4px;
+}
+
+.vscode-codebody {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.vscode-linenumbers {
+    background-color: #1f2428;
+    color: #4a5568;
+    font-family: "Google Sans Code", monospace;
+    font-size: 12px;
+    padding: 10px 10px 10px 6px;
+    text-align: right;
+    user-select: none;
+    line-height: 1.6;
+    min-width: 36px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: block;
+}
+
+.vscode-linenumbers span {
+    display: block;
+    line-height: 1.6;
+}
+
+.vscode-codeinput {
+    flex: 1;
+    background-color: #1f2428;
+    overflow: auto;
+    padding: 10px;
+}
+
+.vscode-codeinput::-webkit-scrollbar       { width: 6px; height: 6px; }
+.vscode-codeinput::-webkit-scrollbar-track { background: transparent; }
+.vscode-codeinput::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 99px; }
+.vscode-codeinput::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.35); }
+
+.vscode-codeinput pre {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+}
+
+.vscode-codeinput pre code.hljs {
+    background: transparent !important;
+    padding: 0 !important;
+    font-family: "Google Sans Code", monospace !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    display: block;
+    white-space: pre;
+    text-align: left;
+}
+
+.vscode-statusbar {
+    width: 100%;
+    height: 20px;
+    background-color: #0078d4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    padding: 0 8px;
+    flex-shrink: 0;
+}
+
+.vscode-statusbar-item {
+    font-family: "Stack Sans Text", sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.mac {
+    width: 100%;
+    height: 100vh;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mac-titlebar {
+    width: 100%;
+    height: 38px;
+    background-color: #21252b;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    flex-shrink: 0;
+}
+
+.mac-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.mac-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.mac-dot-red    { background-color: #ff5f57; }
+.mac-dot-yellow { background-color: #febc2e; }
+.mac-dot-green  { background-color: #28c840; }
+
+.mac-title-file {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Stack Sans Text", sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+}
+
+.mac-codebody {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+    min-height: 0;
+}
+
+.mac-codebody pre {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+}
+
+.mac-codebody pre code.hljs {
+    background: transparent !important;
+    padding: 0 !important;
+    font-family: "Google Sans Code", monospace !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    display: block;
+    white-space: pre;
+    text-align: left;
+}
+
+.mac-codebody::-webkit-scrollbar       { width: 6px; height: 6px; }
+.mac-codebody::-webkit-scrollbar-track { background: transparent; }
+.mac-codebody::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+.mac-codebody::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap');
