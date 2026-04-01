@@ -10,8 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     </head>
     <body>
         <center>
@@ -72,7 +73,6 @@
                 </div>
 
                 <div class="vscode" id="vscodePanel">
-                   
                     <div class="handle handle-right"  id="handleRight"></div>
                     <div class="handle handle-bottom" id="handleBottom">
                         <div class="handle-grip"></div>
@@ -86,15 +86,27 @@
                             <img id="titleIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="10" height="10" style="vertical-align:middle;margin-right:4px;">
                             <span id="titleText">title.html</span>
                         </div>
-                        <button class="copy-btn" id="copyBtn" title="Copy code">
-                            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            <svg id="checkIcon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ec9b0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </button>
+                        <div class="snippet-actions">
+                            <button class="copy-btn copy-btn-tab" id="vscodeCopyBtn" title="Copy code">
+                                <svg id="vscodeCopyIcon" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                            <button class="copy-btn copy-btn-embed" id="vscodeEmbedBtn" title="Copy embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </button>
+                            <button class="copy-btn copy-btn-download" id="vscodeDownloadBtn" title="Download image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                     <div class="vscode-codebody">
                         <div class="vscode-linenumbers" id="lineNumbers"><span>1</span></div>
@@ -107,6 +119,45 @@
                         <span class="vscode-statusbar-item" id="statusLang">HTML</span>
                         <span class="vscode-statusbar-item">UTF-8</span>
                         <span class="vscode-statusbar-item">Ln 1, Col 1</span>
+                    </div>
+                </div>
+
+                <div class="mac" id="macPanel">
+                    <div class="mac-titlebar">
+                        <div class="mac-dots">
+                            <div class="mac-dot mac-dot-red"></div>
+                            <div class="mac-dot mac-dot-yellow"></div>
+                            <div class="mac-dot mac-dot-green"></div>
+                        </div>
+                        <div class="mac-title-file">
+                            <img id="mac-title-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="13" height="13" style="vertical-align:middle;margin-right:5px;">
+                            <span id="mac-title">title.html</span>
+                        </div>
+                        <div class="mac-title-spacer"></div>
+                        <div class="snippet-actions">
+                            <button class="copy-btn copy-btn-mac" id="macCopyBtn" title="Copy code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                            <button class="copy-btn copy-btn-embed copy-btn-mac-embed" id="macEmbedBtn" title="Copy embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </button>
+                            <button class="copy-btn copy-btn-download copy-btn-mac-download" id="macDownloadBtn" title="Download image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mac-codebody">
+                        <pre><code id="mac-highlighted" class="language-html"></code></pre>
                     </div>
                 </div>
 
