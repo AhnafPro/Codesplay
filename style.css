@@ -296,7 +296,6 @@ body {
     transition: background 0.15s;
 }
 
-
 .handle-right {
     right: 0;
     top: 0;
@@ -381,37 +380,6 @@ body {
     flex-shrink: 0;
 }
 
-.copy-btn {
-    margin-left: auto;
-    margin-right: 8px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    padding: 3px 8px;
-    cursor: pointer;
-    color: rgba(221, 224, 228, 0.6);
-    font-family: "Stack Sans Text", sans-serif;
-    font-size: 10px;
-    height: 18px;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
-    flex-shrink: 0;
-}
-
-.copy-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.22);
-    color: #dde0e4;
-}
-
-.copy-btn.copied {
-    background: rgba(78, 201, 176, 0.12);
-    border-color: rgba(78, 201, 176, 0.35);
-    color: #4ec9b0;
-}
-
 .vscode-codetitle {
     height: 100%;
     min-width: 80px;
@@ -426,6 +394,14 @@ body {
     padding: 0 10px;
     white-space: nowrap;
     font-family: "Stack Sans Text", sans-serif;
+}
+
+.snippet-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+    margin-right: 8px;
 }
 
 .vscode-codebody {
@@ -465,13 +441,8 @@ body {
 
 .vscode-codeinput::-webkit-scrollbar       { width: 6px; height: 6px; }
 .vscode-codeinput::-webkit-scrollbar-track { background: transparent; }
-.vscode-codeinput::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.15);
-    border-radius: 99px;
-}
-.vscode-codeinput::-webkit-scrollbar-thumb:hover {
-    background: rgba(255,255,255,0.35);
-}
+.vscode-codeinput::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 99px; }
+.vscode-codeinput::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.35); }
 .vscode-codeinput::-webkit-scrollbar-corner { background: transparent; }
 
 .vscode-codeinput pre {
@@ -520,4 +491,156 @@ body {
 
 .vscode-statusbar-item:hover {
     background: rgba(255, 255, 255, 0.15);
+}
+
+.mac {
+    width: 30%;
+    height: 85vh;
+    background-color: #282c34;
+    margin-left: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.mac-titlebar {
+    width: 100%;
+    height: 38px;
+    background-color: #21252b;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    flex-shrink: 0;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+}
+
+.mac-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.mac-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.mac-dot-red    { background-color: #ff5f57; }
+.mac-dot-yellow { background-color: #febc2e; }
+.mac-dot-green  { background-color: #28c840; }
+
+.mac-title-file {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Stack Sans Text", sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+}
+
+.mac-title-spacer { flex: 1; }
+
+.mac-codebody {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+    min-height: 0;
+}
+
+.mac-codebody pre {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+}
+
+.mac-codebody pre code.hljs {
+    background: transparent !important;
+    padding: 0 !important;
+    font-family: "Google Sans Code", monospace !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    display: block;
+    white-space: pre;
+    text-align: left;
+}
+
+.mac-codebody::-webkit-scrollbar       { width: 6px; height: 6px; }
+.mac-codebody::-webkit-scrollbar-track { background: transparent; }
+.mac-codebody::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+.mac-codebody::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
+.mac-codebody::-webkit-scrollbar-corner { background: transparent; }
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.copy-btn.copied {
+    background: rgba(40, 200, 64, 0.15);
+    border-color: rgba(40, 200, 64, 0.35);
+    color: #28c840;
+}
+
+.copy-btn svg {
+    flex-shrink: 0;
+    transition: stroke 0.15s;
+}
+
+.copy-btn-tab {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.copy-btn-mac {
+    position: relative;
+    z-index: 1;
+}
+
+.copy-btn-embed:hover {
+    background: rgba(87, 47, 160, 0.25);
+    border-color: rgba(140, 100, 220, 0.4);
+    color: rgba(180, 150, 255, 0.85);
+}
+
+.copy-btn-embed.copied {
+    background: rgba(40, 200, 64, 0.15);
+    border-color: rgba(40, 200, 64, 0.35);
+    color: #28c840;
+}
+
+.copy-btn-download:hover {
+    background: rgba(0, 120, 212, 0.2);
+    border-color: rgba(0, 120, 212, 0.45);
+    color: rgba(100, 180, 255, 0.9);
+}
+
+.copy-btn-download.copied {
+    background: rgba(0, 120, 212, 0.15);
+    border-color: rgba(0, 120, 212, 0.4);
+    color: #4eb3ff;
 }
