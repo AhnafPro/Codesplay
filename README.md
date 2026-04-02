@@ -9,9 +9,9 @@
 1. View and download the image of the snippet or copy the embed for your site.
 
 ###### How was it optimized?
-1. Loading="lazy" in the embed code of the snippet.
-- Basically telling the browser to wait until the users have scrolled to a data.
-2. Uses base64 encoding for self contained data URI.
+1. Loading="lazy" (script.js:113) in the embed code of the snippet.
+- Basically telling the browser to wait until the users have scrolled to that certain place of the site.
+2. Uses base64 encoding for self contained data URI embeds.
 - So there won't be any need for backend and site's domain dependency.
 3. Uses SVG is mutiple places.
 - SVG has much smaller file size and faster loading.
